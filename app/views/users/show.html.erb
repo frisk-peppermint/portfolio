@@ -1,2 +1,23 @@
-<%= @user.name %>, <%= @user.tool %>
+<h1>ユーザー情報</h1>
 
+<div class="center jumbotron">
+  
+  <img src="" class="rounded">
+  
+  <div class="show_table">
+    <table class="table table-dark">
+      <tr>
+        <th scope="row">お名前</th>
+        <td><%= @user.name %> </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">フリーパスor回数券</th>
+        <td><%= @user.tool %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
