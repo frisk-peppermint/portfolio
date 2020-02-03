@@ -21,6 +21,9 @@ textarea {
   margin-bottom: 10px;
 }
 
+
+
+
 /* header */
 
 #logo {
@@ -37,4 +40,20 @@ textarea {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+
+/* home */
+
+.btn {
+  margin-top: 10px;
+}
+
+.table {
+  text-align: center;
+}
+
+.table {
+   table-layout: fixed;
+   width: 100%;
 }
