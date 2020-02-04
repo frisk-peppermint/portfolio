@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
     if user && user.authenticate(params[:session][:password])
     else
-      flash[:danger] = 'Invalid email/password combination' 
+      flash.now[:danger] = '名前とパスワードが一致したユーザーが存在ません'
       render 'new'
     end 
   end
