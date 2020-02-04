@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get    '/contact',   to: 'static_pages#contact'
   get    '/campaign',  to: 'static_pages#campaign'
   get    '/signup',    to: 'users#new'
+  get    '/timetable', to: 'users#timetable'
   post   '/signup',    to: 'users#create'
   
   get    '/login',     to: 'sessions#new'

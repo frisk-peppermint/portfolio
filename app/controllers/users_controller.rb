@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     end
   end
   
+  #original
+  def timetable
+  end
+  
   private
 
     def user_params
