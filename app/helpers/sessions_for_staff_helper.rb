@@ -8,4 +8,13 @@ module SessionsForStaffHelper
       @current_staff ||= Staff.find_by(id: session[:staff_id])
     end
   end
+  
+  def logged_in_as_staff?
+    !current_staff.nil?
+  end
+  
+  def log_out
+    session.delete(:staff_id)
+    @current_staff = nil
+  end
 end

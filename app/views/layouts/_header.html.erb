@@ -25,6 +25,26 @@
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
+        
+        
+        <% if logged_in_as_staff? %>
+          <li><%= link_to "Users", '#' %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_staff %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", stafflogout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", stafflogin_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
