@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete '/logout',       to: 'sessions#destroy'
   
   get    '/stafflogin',   to: 'staffs#new'
+  post   '/staffsignup',  to: 'staffs#create'
   
   resources :users
   resources :staffs
