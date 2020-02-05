@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   root 'static_pages#home' # => root_path
   get    '/contact',      to: 'static_pages#contact'
   get    '/campaign',     to: 'static_pages#campaign'
@@ -12,8 +13,12 @@ Rails.application.routes.draw do
   post   '/login',        to: 'sessions#create'
   delete '/logout',       to: 'sessions#destroy'
   
-  get    '/stafflogin',   to: 'staffs#new'
+  get    '/staffsignup',  to: 'staffs#new'
   post   '/staffsignup',  to: 'staffs#create'
+  
+  get    '/stafflogin',   to: 'sessions_for_staff#new'
+  post   '/stafflogin',   to: 'sessions_for_staff#create'
+  delete '/stafflogout',  to: 'sessions_for_staff#destroy'
   
   resources :users
   resources :staffs
