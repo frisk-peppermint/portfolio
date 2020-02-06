@@ -1,4 +1,6 @@
 class StaffsController < ApplicationController
+  before_action :logged_in_staff, only: [:edit, :update]
+  
   def new
     @staff = Staff.new
   end
@@ -20,6 +22,24 @@ class StaffsController < ApplicationController
   
   def edit
     @staff = Staff.find(params[:id])
+  end
+  
+  def update
+    @staff = Staff.find(params[:id])
+    if @staff.update_attributes(staff_params)
+      flash[:success] = "Profile updated"
+      redirect_to @staff
+      # 更新に成功した場合を扱う。
+    else
+      render 'edit'
+    end
+  end
+  
+  def logged_in_staff
+      unless logged_in_as_staff?
+        flash[:danger] = "Please log in."
+        redirect_to stafflogin_url
+      end
   end
   
   private
