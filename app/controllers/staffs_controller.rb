@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   before_action :logged_in_staff, only: [:edit, :update]
+  before_action :correct_staff,   only: [:edit, :update]
   
   def new
     @staff = Staff.new
@@ -35,11 +36,11 @@ class StaffsController < ApplicationController
     end
   end
   
-  def logged_in_staff
-      unless logged_in_as_staff?
-        flash[:danger] = "Please log in."
-        redirect_to stafflogin_url
-      end
+  
+  
+  def correct_staff
+      @staff = Staff.find(params[:id])
+      redirect_to(root_url) unless @staff == current_staff
   end
   
   private
@@ -47,5 +48,18 @@ class StaffsController < ApplicationController
     def staff_params
       params.require(:staff).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+    
+    def logged_in_staff
+      unless logged_in_as_staff?
+      store_location_for_staff
+        flash[:danger] = "Please log in."
+        redirect_to stafflogin_url
+      end
+    end
+    
+    def correct_staff
+      @staff = Staff.find(params[:id])
+      redirect_to(root_url) unless current_staff?(@staff)
     end
 end
