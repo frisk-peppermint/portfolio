@@ -26,7 +26,14 @@ module SessionsForStaffHelper
     !current_staff.nil?
   end
   
+  def forget(staff)
+    staff.forget
+    cookies.delete(:staff_id)
+    cookies.delete(:remember_token)
+  end
+  
   def log_out_as_staff
+    forget(current_staff)
     session.delete(:staff_id)
     @current_staff = nil
   end

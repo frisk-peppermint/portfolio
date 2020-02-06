@@ -15,7 +15,7 @@ class SessionsForStaffController < ApplicationController
   end
   
   def destroy
-    log_out_as_staff
+    log_out_as_staff if logged_in_as_staff?
     redirect_to root_url
   end
   
