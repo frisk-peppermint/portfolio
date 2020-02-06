@@ -1,6 +1,7 @@
 class StaffsController < ApplicationController
-  before_action :logged_in_staff, only: [:edit, :update]
+  before_action :logged_in_staff, only: [:edit, :update, :destroy]
   before_action :correct_staff,   only: [:edit, :update]
+  before_action :admin_staff,     only: :destroy
   
   def index
     @staffs = Staff.paginate(page: params[:page], per_page: 10)
@@ -40,11 +41,15 @@ class StaffsController < ApplicationController
     end
   end
   
-  
-  
   def correct_staff
       @staff = Staff.find(params[:id])
       redirect_to(root_url) unless @staff == current_staff
+  end
+  
+  def destroy
+    Staff.find(params[:id]).destroy
+    flash[:success] = "Staff deleted"
+    redirect_to staffs_url
   end
   
   private
@@ -65,5 +70,9 @@ class StaffsController < ApplicationController
     def correct_staff
       @staff = Staff.find(params[:id])
       redirect_to(root_url) unless current_staff?(@staff)
+    end
+    
+    def admin_staff
+      redirect_to(root_url) unless current_staff.admin?
     end
 end

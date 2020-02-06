@@ -1,11 +1,7 @@
 <h1>スタッフ一覧</h1>
 
 <ul class="staffs">
-  <% @staffs.each do |staff| %>
-    <li>
-      <%= link_to staff.name, staff %>
-    </li>
-  <% end %>
+   <%= render @staffs %>
 </ul>
 
 <%= will_paginate @staffs, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'%>

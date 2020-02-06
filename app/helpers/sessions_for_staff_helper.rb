@@ -1,4 +1,5 @@
 module SessionsForStaffHelper
+  
   def log_in_as_staff(staff)
     session[:staff_id] = staff.id
   end
@@ -16,7 +17,9 @@ module SessionsForStaffHelper
   def current_staff
     if (staff_id = session[:staff_id])
       @current_staff ||= Staff.find_by(id: staff_id)
+      
     elsif (staff_id = cookies.signed[:staff_id])
+    
       staff = Staff.find_by(id: staff_id)
       if staff && staff.authenticated?(cookies[:remember_token])
         log_in_as_staff staff
