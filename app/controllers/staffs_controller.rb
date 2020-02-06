@@ -18,6 +18,10 @@ class StaffsController < ApplicationController
     end
   end
   
+  def edit
+    @staff = Staff.find(params[:id])
+  end
+  
   private
 
     def staff_params
