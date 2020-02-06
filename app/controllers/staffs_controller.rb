@@ -2,6 +2,10 @@ class StaffsController < ApplicationController
   before_action :logged_in_staff, only: [:edit, :update]
   before_action :correct_staff,   only: [:edit, :update]
   
+  def index
+    @staff = Staff.all
+  end
+  
   def new
     @staff = Staff.new
   end

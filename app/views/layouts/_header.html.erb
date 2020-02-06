@@ -6,7 +6,7 @@
         <li><%= link_to "トップへ戻る", root_path %></li>
         <li><%= link_to "ログイン", login_path %></li>
         <li><%= link_to "キャンペーン", campaign_path %></li>
-        <li><%= link_to "スタッフ一覧", '#' %></li>
+        <li><%= link_to "スタッフ一覧", staffs_path %></li>
         
         <% if logged_in? %>
           <li><%= link_to "予約表", timetable_path %></li>

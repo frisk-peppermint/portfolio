@@ -1,0 +1,9 @@
+<h1>All staffs</h1>
+
+<ul class="staffs">
+  <% @staff.each do |staff| %>
+    <li>
+      <%= link_to staff.name, staff %>
+    </li>
+  <% end %>
+</ul>
