@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show]
   before_action :correct_user,   only: [:edit, :update, :show]
   
+  def index
+    @users = User.search(params[:search])
+  end
+  
   def new
     @user = User.new
   end
@@ -33,6 +37,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "患者様を抹消しました..."
+    redirect_to users_url
   end
   
   #original

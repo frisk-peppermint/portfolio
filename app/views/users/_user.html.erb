@@ -1,0 +1,7 @@
+<li>
+  <%= link_to user.name, user %>
+  <% if current_staff.try(:admin?) && !current_staff?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
