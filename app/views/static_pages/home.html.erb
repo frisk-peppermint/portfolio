@@ -1,4 +1,19 @@
-<div class="center jumbotron">
+<% if logged_in_as_staff? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="staff_info">
+        <%= render 'helpers/staff_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'helpers/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'helpers/feed' %>
+    </div>
+  </div>
+<% else %><div class="center jumbotron">
   <h1>Thank you for comming!!</h1>
   <h2>
   　ユーザー登録をしていただくと、施術内容が予約表に反映され、より正確な予約状況がわかります！
@@ -11,3 +26,4 @@
 
 <%= render 'helpers/time_table' %>
 
+<% end %>

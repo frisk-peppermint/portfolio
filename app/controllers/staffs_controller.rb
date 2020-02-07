@@ -13,7 +13,7 @@ class StaffsController < ApplicationController
   
   def show
     @staff = Staff.find(params[:id])
-    @microposts = @staff.microposts.paginate(page: params[:page])
+    @microposts = @staff.microposts.paginate(page: params[:page], per_page: 10)
   end
   
   def create
@@ -60,13 +60,7 @@ class StaffsController < ApplicationController
                                    :password_confirmation)
     end
     
-    def logged_in_staff
-      unless logged_in_as_staff?
-      store_location_for_staff
-        flash[:danger] = "Please log in."
-        redirect_to stafflogin_url
-      end
-    end
+    
     
     def correct_staff
       @staff = Staff.find(params[:id])
