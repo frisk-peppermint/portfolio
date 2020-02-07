@@ -1,1 +1,18 @@
-<%= @staff.name %>, <%= @staff.email %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="staff_info">
+      <h1>
+        <%= @staff.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @staff.microposts.any? %>
+      <h3>Microposts (<%= @staff.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>

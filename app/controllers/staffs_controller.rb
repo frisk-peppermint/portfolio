@@ -13,6 +13,7 @@ class StaffsController < ApplicationController
   
   def show
     @staff = Staff.find(params[:id])
+    @microposts = @staff.microposts.paginate(page: params[:page])
   end
   
   def create
