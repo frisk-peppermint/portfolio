@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20200207135120) do
 
   create_table "timetables", force: :cascade do |t|
     t.string "time"
-    t.string "reservation"
+    t.string "reservation1"
+    t.string "reservation2"
+    t.string "reservation3"
+    t.string "reservation4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
