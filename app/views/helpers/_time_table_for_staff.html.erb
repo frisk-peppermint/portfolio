@@ -1,0 +1,19 @@
+<div class="home_table">
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <td colspan="5"><h4>本日の予約状況(スタッフ専用)</h4></td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @timetables.each do |a|%>
+  <tr>
+      <td><%= a.time %></td>
+      <td><%= a.reservation1 %></td>
+      <td><%= a.reservation2 %></td>
+      <td><%= a.reservation3 %></td>
+      <td><%= a.reservation4 %></td>
+    </tr>
+  <% end %>
+</table>
+</div>

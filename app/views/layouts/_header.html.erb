@@ -24,7 +24,7 @@
         
         <% if logged_in_as_staff? %>
           <li><%= link_to "患者様一覧", users_path %></li>
-          <li><%= link_to "予約表", '#' %></li>
+          <li><%= link_to "スタッフ専用予約表", stafftimetable_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">アカウント <b class="caret"></b></a>
             <ul class="dropdown-menu">

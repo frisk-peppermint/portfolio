@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post   '/stafflogin',   to: 'sessions_for_staff#create'
   delete '/stafflogout',  to: 'sessions_for_staff#destroy'
   
+  get    '/stafftimetable', to: 'timetables#timetable_index'
+  
   resources :users
   resources :staffs
   resources :account_activations, only: [:edit]
