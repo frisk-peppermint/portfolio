@@ -116,3 +116,9 @@
   </tbody>
 </table>
 </div>
+
+<%= form_for(@timetable) do |f| %>
+  <%= f.text_field :reservation1, value: @username  %>
+  
+  <%= f.submit %>
+<% end %>

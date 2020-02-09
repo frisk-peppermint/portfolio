@@ -4,11 +4,18 @@ class StaticPagesController < ApplicationController
       @micropost  = current_staff.microposts.build
       @feed_items = current_staff.feed.paginate(page: params[:page])
     end
+    @timetable = Timetable.new
+    @user = User.find(params[:id])
+    @username = @user.name
   end
   
   def contact
   end
   
   def campaign
+  end
+  
+  def new
+    
   end
 end
