@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :timetable2s
   root 'static_pages#home' # => root_path
   get    '/contact',      to: 'static_pages#contact'
   get    '/campaign',     to: 'static_pages#campaign'

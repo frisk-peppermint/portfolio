@@ -5,8 +5,6 @@ class StaticPagesController < ApplicationController
       @feed_items = current_staff.feed.paginate(page: params[:page])
     end
     @timetable = Timetable.new
-    @user = User.find(params[:id])
-    @username = @user.name
   end
   
   def contact
@@ -18,4 +16,7 @@ class StaticPagesController < ApplicationController
   def new
     
   end
+  
+
+  
 end

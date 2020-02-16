@@ -1,0 +1,32 @@
+<%= form_with(model: timetable2, local: true) do |form| %>
+  <% if timetable2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timetable2.errors.count, "error") %> prohibited this timetable2 from being saved:</h2>
+
+      <ul>
+      <% timetable2.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :timetable2_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :NOP %>
+    <%= form.number_field :NOP, id: :timetable2_NOP %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.text_field :time, id: :timetable2_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

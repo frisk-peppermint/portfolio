@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200207135120) do
+ActiveRecord::Schema.define(version: 20200216024022) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -33,14 +33,22 @@ ActiveRecord::Schema.define(version: 20200207135120) do
     t.index ["email"], name: "index_staffs_on_email", unique: true
   end
 
-  create_table "timetables", force: :cascade do |t|
+  create_table "timetable2s", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "NOP"
     t.string "time"
-    t.string "reservation1"
-    t.string "reservation2"
-    t.string "reservation3"
-    t.string "reservation4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "timetables", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "date"
+    t.string "hour"
+    t.string "minute"
   end
 
   create_table "users", force: :cascade do |t|

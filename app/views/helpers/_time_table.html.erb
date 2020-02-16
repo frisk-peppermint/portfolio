@@ -42,6 +42,13 @@
       <td></td>
     </tr>
     <tr>
+      <td>12:00~12:30</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
       <td colspan="5">休診</td>
     </tr>
     <tr>
@@ -106,19 +113,25 @@
       <td></td>
       <td></td>
     </tr>
-    <tr>
-      <td>20:00~20:30</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
   </tbody>
 </table>
 </div>
 
+
 <%= form_for(@timetable) do |f| %>
-  <%= f.text_field :reservation1, value: @username  %>
-  
+  <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
+  <%= f.select :hour, [["9時", "9"], 
+                       ["10時", "10"],
+                       ["11時", "11"],
+                       ["12時", "12"],
+                       ["15時", "15"],
+                       ["16時", "16"],
+                       ["17時", "17"],
+                       ["18時", "18"],
+                       ["19時", "19"],],  :prompt => "時間を選択してください" %>
+                       
+  <%= f.select :minute, [["00分", "00"], 
+                         ["30分", "30"]],  :prompt => "分を選択してください" %>
   <%= f.submit %>
-<% end %>
+<% end %> 
+
