@@ -9,7 +9,7 @@
         <li><%= link_to "スタッフ一覧", staffs_path %></li>
         
         <% if logged_in? %>
-          <li><%= link_to "予約表", timetable_path %></li>
+          <li><%= link_to "予約表", timetable_path(current_user) %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">アカウント<b class="caret"></b></a>
             <ul class="dropdown-menu">

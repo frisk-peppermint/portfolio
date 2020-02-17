@@ -13,7 +13,8 @@
       <%= render 'helpers/feed' %>
     </div>
   </div>
-<% else %><div class="center jumbotron">
+<% elsif !logged_in? %>
+<div class="center jumbotron">
   <h1>Thank you for comming!!</h1>
   <h2>
   　ユーザー登録をしていただくと、施術内容が予約表に反映され、より正確な予約状況がわかります！
@@ -23,8 +24,8 @@
     <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 </div>
-
+<% end %>
 <%= render 'helpers/time_table' %>
 
-<% end %>
+
 

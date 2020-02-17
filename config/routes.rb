@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
 
 
-  resources :timetable2s
   root 'static_pages#home' # => root_path
   get    '/contact',      to: 'static_pages#contact'
   get    '/campaign',     to: 'static_pages#campaign'
   get    '/signup',       to: 'users#new'
-  get    '/timetable',    to: 'users#timetable'
+  get    '/usertimetable',    to: 'users#timetable'
   post   '/signup',       to: 'users#create'
   
   get    '/login',        to: 'sessions#new'

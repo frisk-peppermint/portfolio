@@ -1,7 +1,9 @@
 class TimetablesController < ApplicationController
   def timetable_index
     @timetables = Timetable.all
-    @time0900 = Timetable.where(hour: "9", minute: "00")
+    
+    
+    @time0900 = Timetable.where(hour: "9", minute: "00") 
     @time0930 = Timetable.where(hour: "9", minute: "30")
     @time1000 = Timetable.where(hour: "10", minute: "00")
     @time1030 = Timetable.where(hour: "10", minute: "30")
@@ -19,8 +21,6 @@ class TimetablesController < ApplicationController
     @time1830 = Timetable.where(hour: "18", minute: "30")
     @time1900 = Timetable.where(hour: "19", minute: "00")
     @time1930 = Timetable.where(hour: "19", minute: "30")
-    
-
   end
   
   def new
@@ -39,7 +39,7 @@ class TimetablesController < ApplicationController
   end
   
   def show
-    @time0900 = Timetable.find()
+    @user = Timetable.find_by(params[:id])
   end
   
   def destroy
