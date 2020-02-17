@@ -8,115 +8,92 @@
   </thead>
   <tbody>
     <tr>
-    <tr>
       <td>9:00~9:30</td>
         <% (@time0900.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
-        <% (4-@time0900.count).times do %><td>予約可能です</td><% end %>
+        <% (4-@time0900.count).times do %><td>受付中</td><% end %>
     </tr>
-    </tr>
-
     <tr>
       <td>9:30~10:00</td>
-      <% if @time0930.present? %>
-        <% @time0930.each do |f| %>
-        <td><%= f.user_id %></td>
-        <% end %>
-      <% else %>
-        <td>予約可能です</td>
-      <% end %>
+        <% (@time0930.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time0930.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>10:00~10:30</td>
-      <% @time1000.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1000.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1000.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>10:30~11:00</td>
-      <% @time1030.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1030.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1030.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>11:00~11:30</td>
-      <% @time1100.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1100.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1100.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>11:30~12:00</td>
-      <% @time1130.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1130.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1130.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>12:00~12:30</td>
-      <% @time1200.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1200.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1200.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td colspan="5">休診</td>
     </tr>
     <tr>
       <td>15:00~15:30</td>
-      <% @time1500.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1500.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1500.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>15:30~16:00</td>
-      <% @time1530.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1530.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1530.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>16:00~16:30</td>
-      <% @time1600.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1600.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1600.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
-      <td>17:30~17:00</td>
-      <% @time1630.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+      <td>16:30~17:00</td>
+        <% (@time1630.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1630.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>17:00~17:30</td>
-      <% @time1700.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1700.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1700.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>17:30~18:00</td>
-      <% @time1730.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1730.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1730.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>18:00~18:30</td>
-      <% @time1800.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1800.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1800.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>18:30~19:00</td>
-      <% @time1830.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1830.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1830.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>19:00~19:30</td>
-      <% @time1900.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1900.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1900.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
       <td>19:30~20:00</td>
-      <% @time1930.each do |f| %>
-      <td><%= f.user_id %></td>
-      <% end %>
+        <% (@time1930.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
+        <% (4-@time1930.count).times do %><td>受付中</td><% end %>
     </tr>
   </tbody>
 </table>

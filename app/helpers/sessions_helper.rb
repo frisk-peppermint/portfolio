@@ -32,6 +32,7 @@ module SessionsHelper
     session[:forwarding_url] = request.original_url if request.get?
   end
   
+  # timetables/user_id/showなどで使用される
   def current_user_timetable
     if session[:user_id]
       @current_timetable ||= Timetable.find_by(id: session[:user_id])
