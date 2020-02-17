@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200216024022) do
+ActiveRecord::Schema.define(version: 20200217085521) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20200216024022) do
     t.string "date"
     t.string "hour"
     t.string "minute"
+    t.boolean "admin"
   end
 
   create_table "users", force: :cascade do |t|

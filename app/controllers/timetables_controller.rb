@@ -1,29 +1,29 @@
 class TimetablesController < ApplicationController
   before_action :logged_in_timetable, only: [:edit, :update, :show]
   before_action :correct_timetable,   only: [:edit, :update, :show]
+  
  
   def timetable_index
     @timetables = Timetable.all
     
-    
-    @time0900 = Timetable.where(hour: "9", minute: "00") 
-    @time0930 = Timetable.where(hour: "9", minute: "30")
-    @time1000 = Timetable.where(hour: "10", minute: "00")
-    @time1030 = Timetable.where(hour: "10", minute: "30")
-    @time1100 = Timetable.where(hour: "11", minute: "00")
-    @time1130 = Timetable.where(hour: "11", minute: "30")
-    @time1200 = Timetable.where(hour: "12", minute: "00")
-    @time1230 = Timetable.where(hour: "12", minute: "30")
-    @time1500 = Timetable.where(hour: "15", minute: "00")
-    @time1530 = Timetable.where(hour: "15", minute: "30")
-    @time1600 = Timetable.where(hour: "16", minute: "00")
-    @time1630 = Timetable.where(hour: "16", minute: "30")
-    @time1700 = Timetable.where(hour: "17", minute: "00")
-    @time1730 = Timetable.where(hour: "17", minute: "30")
-    @time1800 = Timetable.where(hour: "18", minute: "00")
-    @time1830 = Timetable.where(hour: "18", minute: "30")
-    @time1900 = Timetable.where(hour: "19", minute: "00")
-    @time1930 = Timetable.where(hour: "19", minute: "30")
+    @times0900 = Timetable.where(hour: "9", minute: "00") 
+    @times0930 = Timetable.where(hour: "9", minute: "30")
+    @times1000 = Timetable.where(hour: "10", minute: "00")
+    @times1030 = Timetable.where(hour: "10", minute: "30")
+    @times1100 = Timetable.where(hour: "11", minute: "00")
+    @times1130 = Timetable.where(hour: "11", minute: "30")
+    @times1200 = Timetable.where(hour: "12", minute: "00")
+    @times1230 = Timetable.where(hour: "12", minute: "30")
+    @times1500 = Timetable.where(hour: "15", minute: "00")
+    @times1530 = Timetable.where(hour: "15", minute: "30")
+    @times1600 = Timetable.where(hour: "16", minute: "00")
+    @times1630 = Timetable.where(hour: "16", minute: "30")
+    @times1700 = Timetable.where(hour: "17", minute: "00")
+    @times1730 = Timetable.where(hour: "17", minute: "30")
+    @times1800 = Timetable.where(hour: "18", minute: "00")
+    @times1830 = Timetable.where(hour: "18", minute: "30")
+    @times1900 = Timetable.where(hour: "19", minute: "00")
+    @times1930 = Timetable.where(hour: "19", minute: "30")
   end
   
   def new
@@ -42,30 +42,30 @@ class TimetablesController < ApplicationController
   end
   
   def show
-    @timetable = Timetable.find(params[:id])
+    @timetable = Timetable.find_by_id(params[:id])
   end
   
   def edit 
     @timetable = Timetable.find(params[:id])
     
-    @time0900 = Timetable.where(hour: "9", minute: "00") 
-    @time0930 = Timetable.where(hour: "9", minute: "30")
-    @time1000 = Timetable.where(hour: "10", minute: "00")
-    @time1030 = Timetable.where(hour: "10", minute: "30")
-    @time1100 = Timetable.where(hour: "11", minute: "00")
-    @time1130 = Timetable.where(hour: "11", minute: "30")
-    @time1200 = Timetable.where(hour: "12", minute: "00")
-    @time1230 = Timetable.where(hour: "12", minute: "30")
-    @time1500 = Timetable.where(hour: "15", minute: "00")
-    @time1530 = Timetable.where(hour: "15", minute: "30")
-    @time1600 = Timetable.where(hour: "16", minute: "00")
-    @time1630 = Timetable.where(hour: "16", minute: "30")
-    @time1700 = Timetable.where(hour: "17", minute: "00")
-    @time1730 = Timetable.where(hour: "17", minute: "30")
-    @time1800 = Timetable.where(hour: "18", minute: "00")
-    @time1830 = Timetable.where(hour: "18", minute: "30")
-    @time1900 = Timetable.where(hour: "19", minute: "00")
-    @time1930 = Timetable.where(hour: "19", minute: "30")
+    @times0900 = Timetable.where(hour: "9", minute: "00") 
+    @times0930 = Timetable.where(hour: "9", minute: "30")
+    @times1000 = Timetable.where(hour: "10", minute: "00")
+    @times1030 = Timetable.where(hour: "10", minute: "30")
+    @times1100 = Timetable.where(hour: "11", minute: "00")
+    @times1130 = Timetable.where(hour: "11", minute: "30")
+    @times1200 = Timetable.where(hour: "12", minute: "00")
+    @times1230 = Timetable.where(hour: "12", minute: "30")
+    @times1500 = Timetable.where(hour: "15", minute: "00")
+    @times1530 = Timetable.where(hour: "15", minute: "30")
+    @times1600 = Timetable.where(hour: "16", minute: "00")
+    @times1630 = Timetable.where(hour: "16", minute: "30")
+    @times1700 = Timetable.where(hour: "17", minute: "00")
+    @times1730 = Timetable.where(hour: "17", minute: "30")
+    @times1800 = Timetable.where(hour: "18", minute: "00")
+    @times1830 = Timetable.where(hour: "18", minute: "30")
+    @times1900 = Timetable.where(hour: "19", minute: "00")
+    @times1930 = Timetable.where(hour: "19", minute: "30")
   end
   
   def update
@@ -96,8 +96,8 @@ class TimetablesController < ApplicationController
     end
     
     def correct_timetable
-      @timetable = Timetable.find(params[:id])
-      redirect_to(root_url) unless @timetable == current_user_timetable
+      @timetable = User.find(params[:id])
+      redirect_to(root_url) unless @timetable == current_user
     end
   
 end
