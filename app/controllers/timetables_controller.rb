@@ -1,4 +1,7 @@
 class TimetablesController < ApplicationController
+  before_action :logged_in_timetable, only: [:edit, :update, :show]
+  before_action :correct_timetable,   only: [:edit, :update, :show]
+ 
   def timetable_index
     @timetables = Timetable.all
     
@@ -39,14 +42,62 @@ class TimetablesController < ApplicationController
   end
   
   def show
-    @user = Timetable.find_by(params[:id])
+    @timetable = Timetable.find(params[:id])
+  end
+  
+  def edit 
+    @timetable = Timetable.find(params[:id])
+    
+    @time0900 = Timetable.where(hour: "9", minute: "00") 
+    @time0930 = Timetable.where(hour: "9", minute: "30")
+    @time1000 = Timetable.where(hour: "10", minute: "00")
+    @time1030 = Timetable.where(hour: "10", minute: "30")
+    @time1100 = Timetable.where(hour: "11", minute: "00")
+    @time1130 = Timetable.where(hour: "11", minute: "30")
+    @time1200 = Timetable.where(hour: "12", minute: "00")
+    @time1230 = Timetable.where(hour: "12", minute: "30")
+    @time1500 = Timetable.where(hour: "15", minute: "00")
+    @time1530 = Timetable.where(hour: "15", minute: "30")
+    @time1600 = Timetable.where(hour: "16", minute: "00")
+    @time1630 = Timetable.where(hour: "16", minute: "30")
+    @time1700 = Timetable.where(hour: "17", minute: "00")
+    @time1730 = Timetable.where(hour: "17", minute: "30")
+    @time1800 = Timetable.where(hour: "18", minute: "00")
+    @time1830 = Timetable.where(hour: "18", minute: "30")
+    @time1900 = Timetable.where(hour: "19", minute: "00")
+    @time1930 = Timetable.where(hour: "19", minute: "30")
+  end
+  
+  def update
+    @timetable = Timetable.find(params[:id])
+    if @timetable.update_attributes(timetable_params)
+      flash[:success] = "予約時間を変更しました。"
+      redirect_to timetable_path(current_user)
+    else
+      flash[:danger] = "予約を受け付けられませんでした。"
+      render 'edit'
+      
+    end
   end
   
   def destroy
   end 
   
   private
-  def timetable_params
-    params.require(:timetable).permit(:user_id, :user_name, :date, :hour, :minute)
-  end
+    def timetable_params
+      params.require(:timetable).permit(:user_id, :user_name, :date, :hour, :minute)
+    end  
+  
+    def logged_in_timetable
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+    
+    def correct_timetable
+      @timetable = Timetable.find(params[:id])
+      redirect_to(root_url) unless @timetable == current_user_timetable
+    end
+  
 end

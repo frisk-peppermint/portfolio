@@ -1,2 +1,4 @@
-<h1><%= @user.user_name %>さんの次の予約は<h1>
-<h3><%= @user.date %>日の<%= @user.hour %>時<%= @user.minute %>時からです</h3>
+<h1><%= @timetable.user_name %>さんの次の予約は<h1>
+<h3><%= @timetable.date %>日の<%= @timetable.hour %>時<%= @timetable.minute %>時からです</h3>
+
+<%= link_to "予約時間を変更する", edit_timetable_path(current_user) %>
