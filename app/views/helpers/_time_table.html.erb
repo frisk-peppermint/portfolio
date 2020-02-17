@@ -10,7 +10,7 @@
     <tr>
     <tr>
       <td>9:00~9:30</td>
-        <% @time0900.each do |f| %><td><%= f.user_name %></td><% end %>
+        <% (@time0900.count).times do |f| %><td><strong>〜予約済み〜</strong></td><% end %>
         <% (4-@time0900.count).times do %><td>予約可能です</td><% end %>
     </tr>
     </tr>
