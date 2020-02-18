@@ -1,7 +1,7 @@
 class TimetablesController < ApplicationController
   before_action :logged_in_timetable, only: [:edit, :update, :show]
   before_action :correct_timetable,   only: [:edit, :update, :show]
-  
+  before_action :set_timetable,       only: [:destroy]
  
   def timetable_index
     @timetables = Timetable.all
@@ -81,6 +81,9 @@ class TimetablesController < ApplicationController
   end
   
   def destroy
+    @timetable.destroy
+    flash[:success] = "予約が取り消されました。"
+    redirect_to root_path
   end 
   
   private
@@ -100,4 +103,7 @@ class TimetablesController < ApplicationController
       redirect_to(root_url) unless @timetable == current_user
     end
   
+    def set_timetable
+      @timetable = Timetable.find(params[:id])
+    end
 end
