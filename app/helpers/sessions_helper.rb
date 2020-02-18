@@ -38,4 +38,5 @@ module SessionsHelper
       @current_timetable ||= Timetable.find_by(id: session[:user_id])
     end
   end
+  
 end
