@@ -17,9 +17,9 @@ class StaffsController < ApplicationController
   end
   
   def create
-    @staff = Staff.new(staff_params)    # 実装は終わっていないことに注意!
+    @staff = Staff.new(staff_params)  
     if @staff.save
-      log_in @staff
+      log_in_as_staff @staff
       flash[:success] = "スタッフ登録に成功しました。"
       redirect_to @staff
     else

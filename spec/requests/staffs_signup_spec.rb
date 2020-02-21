@@ -1,0 +1,22 @@
+require 'rails_helper'
+RSpec.describe 'Staffs signup', type: :request do
+  
+  def is_logged_in_as_staff?
+    !session[:staff_id].nil?
+  end
+  
+  example 'get signup information' do
+    get staffsignup_path
+    expect {
+      post staffs_path, params: { staff: { name:  'atsushi',
+                                           email: 'hogehoge@gmail.com',
+                                           password:              'password',
+                                           password_confirmation: 'password' } }
+    }.to change(Staff, :count).by(1)
+    
+    redirect_to @staff
+    follow_redirect!
+    assert_template 'staffs/show'
+    assert is_logged_in_as_staff?
+  end
+end
