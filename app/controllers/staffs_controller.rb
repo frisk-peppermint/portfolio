@@ -34,7 +34,7 @@ class StaffsController < ApplicationController
   def update
     @staff = Staff.find(params[:id])
     if @staff.update_attributes(staff_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "スタッフ情報を変更しました"
       redirect_to @staff
       # 更新に成功した場合を扱う。
     else
@@ -49,7 +49,7 @@ class StaffsController < ApplicationController
   
   def destroy
     Staff.find(params[:id]).destroy
-    flash[:success] = "Staff deleted"
+    flash[:success] = "スタッフを削除しました"
     redirect_to staffs_url
   end
   

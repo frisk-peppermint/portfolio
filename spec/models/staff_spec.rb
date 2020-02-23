@@ -38,5 +38,6 @@ require 'rails_helper'
       staff.save!
       expect(dupulicate_staff).not_to be_valid
     end
+
   end
   

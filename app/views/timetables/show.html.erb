@@ -4,5 +4,5 @@
   <h1><%= @timetable.user_name %>さんの次の予約は<h1>
   <h3><%= @timetable.date %>日の<%= @timetable.hour %>時<%= @timetable.minute %>時からです</h3>
   <%= link_to "予約時間を変更する", edit_timetable_path(current_user) %>
-  <%= link_to "予約を取り消す", @timetable, method: :delete, data: { confirm: "予約を消去します。よろしですか？"} %>
+  <%= link_to "予約を取り消す", @timetable, method: :delete, data: { confirm: "予約を消去します。よろしいですか？"} %>
 <% end %>

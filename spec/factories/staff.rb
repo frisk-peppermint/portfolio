@@ -1,8 +1,9 @@
 FactoryBot.define do
-  factory :staff do
-    name { 'tokunaga'}
+  factory :staff, class: Staff do
+    name { 'tokunaga' }
     email { 'tokunaga@gmail.com' }
     password { 'password' }
     password_confirmation { 'password' }
+    admin { true }
   end
 end

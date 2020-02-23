@@ -5,11 +5,11 @@ RSpec.describe 'Staffs signup', type: :request do
     !session[:staff_id].nil?
   end
   
-  example 'get signup information' do
+  example 'スタッフ登録後自動的にログインされるか' do
     get staffsignup_path
     expect {
-      post staffs_path, params: { staff: { name:  'atsushi',
-                                           email: 'hogehoge@gmail.com',
+      post staffs_path, params: { staff: { name:                  'atsushi',
+                                           email:                 'hogehoge@gmail.com',
                                            password:              'password',
                                            password_confirmation: 'password' } }
     }.to change(Staff, :count).by(1)
@@ -19,4 +19,6 @@ RSpec.describe 'Staffs signup', type: :request do
     assert_template 'staffs/show'
     assert is_logged_in_as_staff?
   end
+    
+  
 end

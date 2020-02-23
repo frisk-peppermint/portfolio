@@ -39,12 +39,6 @@ require 'rails_helper'
       expect(user.name).to eq 'atsushi'
     end
     
-    context 'ユーザーがログインした場合に' do
-      it 'headerにログインしているユーザーの名前が表示されるか' do
-        user = create(:user)
-      
-        expect(current_user.name).to eq 'atsushi'
-     
-      end
-    end
- end
+    
+  
+end

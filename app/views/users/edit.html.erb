@@ -3,14 +3,14 @@
     <%= form_for(@user) do |f| %>
       <%= render 'helpers/error_messages', object: f.object %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :新しい名前 %>
+      <%= f.text_field :name, class: 'form-control', id: 'new_name' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.label :新しいパスワード %>
+      <%= f.password_field :password, class: 'form-control', id: 'new_password' %>
 
-      <%= f.label :パスワード確認, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.label :新しいパスワードの確認 %>
+      <%= f.password_field :password_confirmation, class: 'form-control', id: 'new_password_confirmation' %>
 
       <%= f.submit "変更を保存", class: "btn btn-primary" %>
     <% end %>
