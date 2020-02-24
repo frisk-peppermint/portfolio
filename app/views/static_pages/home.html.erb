@@ -13,19 +13,17 @@
       <%= render 'helpers/feed' %>
     </div>
   </div>
-<% elsif !logged_in? %> 
+<% elsif logged_in? %> 
+  <%= render 'helpers/time_table' %>
+<% else %>
 <div class="center jumbotron">
   <h1>Thank you for comming!!</h1>
-  <h2>
-  　ユーザー登録をしていただくと、施術内容が予約表に反映され、より正確な予約状況がわかります！
-  </h2>
-  
+  <h2>ユーザー登録をしていただくと、予約をとることができます！</h2>
   <div class="btn">
     <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 </div>
-<% end %>
 <%= render 'helpers/time_table' %>
-
+<% end %>
 
 

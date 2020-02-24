@@ -3,7 +3,7 @@
     <%= link_to "成田駅前整骨院", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "予約状況", root_path %></li>
+        
         <li><%= link_to "ログイン", login_path %></li>
         <li><%= link_to "キャンペーン", campaign_path %></li>
         <li><%= link_to "スタッフ一覧", staffs_path %></li>
@@ -15,7 +15,6 @@
             <ul class="dropdown-menu">
               <li><%= link_to "アカウント情報", current_user %></li>
               <li><%= link_to "アカウント編集", edit_user_path(current_user) %></li>
-              <li><%= link_to "コンタクト", contact_path %></li>
               <li class="divider"></li>
               <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
             </ul>
@@ -23,8 +22,9 @@
         <% end %>
         
         <% if logged_in_as_staff? %>
-          <li><%= link_to "患者様一覧", users_path %></li>
           <li><%= link_to "スタッフ専用予約表", stafftimetable_path %></li>
+          <li><%= link_to "患者様一覧", users_path %></li>
+          <li><%= link_to "ブログを書く", root_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">アカウント <b class="caret"></b></a>
             <ul class="dropdown-menu">
