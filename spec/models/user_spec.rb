@@ -34,11 +34,6 @@ require 'rails_helper'
       expect{ user.destroy }.to change{ Timetable.count }.by(-1)
     end
     
-    it '#name' do
-      user = create(:user)
-      expect(user.name).to eq 'atsushi'
-    end
-    
     
   
 end

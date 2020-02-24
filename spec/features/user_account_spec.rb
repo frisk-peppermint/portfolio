@@ -59,4 +59,5 @@ RSpec.feature "Reservation", type: :feature do
     click_on '変更を保存'
     expect(page).to have_content 'アカウント情報が更新されました'
   end
+  
 end

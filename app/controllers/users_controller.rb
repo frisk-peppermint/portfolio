@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show]
   before_action :correct_user,   only: [:edit, :update, :show]
-
   
   def index
     @users = User.search(params[:search])
@@ -77,7 +76,7 @@ class UsersController < ApplicationController
     end
     
     def logged_in_user
-      unless logged_in?
+      unless logged_in? || logged_in_as_staff?
       store_location
         flash[:danger] = "ログインを行ってください"
         redirect_to login_url
@@ -85,7 +84,7 @@ class UsersController < ApplicationController
     end
     
     def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      @user = User.find(params[:id]) 
+      redirect_to(root_url) unless current_user?(@user) || logged_in_as_staff?
     end
 end
