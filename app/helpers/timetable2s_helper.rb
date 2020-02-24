@@ -1,2 +1,0 @@
-module Timetable2sHelper
-end
