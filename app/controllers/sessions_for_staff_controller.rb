@@ -7,7 +7,7 @@ class SessionsForStaffController < ApplicationController
     if staff && staff.authenticate(params[:session][:password])
       log_in_as_staff staff
       params[:session][:remember_me] == '1' ? remember(staff) : forget(staff)
-      redirect_back_or_for_staff staff
+      redirect_back_or_for_staff stafftimetable_path
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
