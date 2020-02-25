@@ -33,11 +33,12 @@ class TimetablesController < ApplicationController
   def create
     @timetable = Timetable.new(user_id: current_user.id, user_name: current_user.name, date: timetable_params[:date], hour: timetable_params[:hour], minute: timetable_params[:minute])
     @timetables = Timetable.all
-    @reservations = @timetables.where(hour: "9", minute: "00")
-    @reservations2 = @timetables.where(hour: "9", minute: "30")
+    @hoge = @timetables.where(hour: "#{@timetable.hour}", minute: "#{@timetable.minute}")
+    @hogehoge = @timetables.where(user_id: @timetable.user_id)
     
     
-    if @reservations.count < 4
+    
+    if (@hoge.count < 4) && @hogehoge.empty?
       @timetable.save
       flash[:success] = "ご予約ありがとうございます。#{@timetable.hour}時#{@timetable.minute}分にお待ちしております"
       redirect_to root_path
@@ -45,11 +46,11 @@ class TimetablesController < ApplicationController
       flash[:success] = "申し訳ございません。すでに予約が上限に達しているため、受け付けられませんでした。"
       redirect_to root_path
     end
-    
+  end
     
 
     
-  end
+  
   
   def show
     @timetable = Timetable.where(user_id: params[:id]).first
@@ -117,6 +118,7 @@ class TimetablesController < ApplicationController
     def set_timetable
       @timetable = Timetable.find(params[:id])
     end
+    
     def hoge_params
       params.permit(:user_id)
     end
