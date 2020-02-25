@@ -1,7 +1,21 @@
 <h1>アカウント情報の変更</h1>
 
+<%= form_for(@staff) do |f| %>
+      <% if @staff.image? %>
+      <%= image_tag @staff.image.url %>
+    <% else %>
+      <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+    <% end %>
+      <button type="button" class="btn btn-outline-secondary rounded-pill">
+         <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+      </button>
+　  　<%= f.submit '画像を更新する', class: 'btn btn-primary' %>
+    <% end %>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    
+    
     <%= form_for(@staff) do |f| %>
       <%= render 'helpers/error_messages', object: f.object %>
 

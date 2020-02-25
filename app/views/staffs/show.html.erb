@@ -5,6 +5,8 @@
         <%= @staff.name %>
       </h1>
     </section>
+    <%= image_tag @staff.image.thumb50.url %>
+    
   </aside>
   <div class="col-md-8">
     <% if @staff.microposts.any? %>

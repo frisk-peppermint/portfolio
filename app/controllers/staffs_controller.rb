@@ -57,8 +57,7 @@ class StaffsController < ApplicationController
   private
 
     def staff_params
-      params.require(:staff).permit(:name, :email, :password,
-                                   :password_confirmation)
+      params.require(:staff).permit(:name, :email, :password, :password_confirmation, :image)
     end
     
     def correct_staff
