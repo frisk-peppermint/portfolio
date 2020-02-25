@@ -4,8 +4,9 @@
       <h1>
         <%= @staff.name %>
       </h1>
+      <%= image_tag @staff.image.thumb350.url, class: 'image' if @staff.image? %>
     </section>
-    <%= image_tag @staff.image.thumb50.url %>
+    
     
   </aside>
   <div class="col-md-8">
