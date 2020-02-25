@@ -33,12 +33,10 @@ class TimetablesController < ApplicationController
   def create
     @timetable = Timetable.new(user_id: current_user.id, user_name: current_user.name, date: timetable_params[:date], hour: timetable_params[:hour], minute: timetable_params[:minute])
     @timetables = Timetable.all
-    @hoge = @timetables.where(hour: "#{@timetable.hour}", minute: "#{@timetable.minute}")
-    @hogehoge = @timetables.where(user_id: @timetable.user_id)
+    @reservations = @timetables.where(hour: "#{@timetable.hour}", minute: "#{@timetable.minute}")
+    @user_id_in_timetable = @timetables.where(user_id: @timetable.user_id)
     
-    
-    
-    if (@hoge.count < 4) && @hogehoge.empty?
+    if (@reservations.count < 4) && @user_id_in_timetable.empty?
       @timetable.save
       flash[:success] = "ご予約ありがとうございます。#{@timetable.hour}時#{@timetable.minute}分にお待ちしております"
       redirect_to root_path
@@ -47,10 +45,6 @@ class TimetablesController < ApplicationController
       redirect_to root_path
     end
   end
-    
-
-    
-  
   
   def show
     @timetable = Timetable.where(user_id: params[:id]).first
