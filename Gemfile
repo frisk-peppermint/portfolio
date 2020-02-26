@@ -19,7 +19,7 @@ gem 'rails-i18n'
 
 
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
+  gem 'sqlite3', groups: %w(test development), require: false
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'rspec-rails'
   gem 'factory_bot_rails'
@@ -50,7 +50,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+  gem 'pg', groups: %w(production), require: false
   gem 'fog', '1.42'
 end
 
