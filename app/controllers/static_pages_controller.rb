@@ -28,14 +28,7 @@ class StaticPagesController < ApplicationController
     @times1930 = Timetable.where(hour: "19", minute: "30")
   end
   
-  def contact
-  end
-  
-  def campaign
-  end
-  
   def new
-    
   end
   
 
