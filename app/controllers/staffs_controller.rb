@@ -18,12 +18,14 @@ class StaffsController < ApplicationController
   
   def create
     @staff = Staff.new(staff_params)  
-    if @staff.save
-      log_in_as_staff @staff
-      flash[:success] = "スタッフ登録に成功しました。"
-      redirect_to @staff
+    
+    if @staff[:key] == "nikoniko"
+       @staff.save
+       log_in_as_staff @staff
+       flash[:success] = "スタッフ登録に成功しました。"
+       redirect_to @staff
     else
-      render 'new'
+       render 'new'
     end
   end
   
@@ -57,7 +59,7 @@ class StaffsController < ApplicationController
   private
 
     def staff_params
-      params.require(:staff).permit(:name, :email, :password, :password_confirmation, :image)
+      params.require(:staff).permit(:name, :email, :password, :password_confirmation, :key, :image)
     end
     
     def correct_staff

@@ -2,6 +2,7 @@
 <% if logged_in? %>
   <%= form_for(@timetable) do |f| %>
     <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
+    <%= f.label :時間を選択してください %>
     <%= f.select :hour, [["9時", "9"], 
                          ["10時", "10"],
                          ["11時", "11"],
@@ -10,11 +11,11 @@
                          ["16時", "16"],
                          ["17時", "17"],
                          ["18時", "18"],
-                         ["19時", "19"],], {:prompt => "時間を選択してください"}, {id: "hour"} %>
-                         
+                         ["19時", "19"],], {id: "hour"} %>
+    <%= f.label :分を選択してください %>                     
     <%= f.select :minute, [["00分", "00"], 
-                           ["30分", "30"]], {:prompt => "分を選択してください"}, {id: "minute"} %>
-    <%= f.submit %>
+                           ["30分", "30"]], {id: "minute"} %>
+    <%= f.submit :予約する  %>
   <% end %> 
 <% end %>
 

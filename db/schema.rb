@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200225114249) do
+ActiveRecord::Schema.define(version: 20200226043352) do
 
   create_table "campaings", force: :cascade do |t|
     t.string "content"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20200225114249) do
     t.string "remember_digest"
     t.boolean "admin", default: false
     t.string "image"
+    t.string "key"
     t.index ["email"], name: "index_staffs_on_email", unique: true
   end
 

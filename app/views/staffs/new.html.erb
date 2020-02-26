@@ -5,18 +5,21 @@
     <%= form_for(@staff, url: staffsignup_path) do |f| %>
     <%= render 'helpers/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :名前 %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
+      <%= f.label :メール %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :パスワード %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :パスワード（確認）%>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-
+      
+      <%= f.label :鍵 %>
+      <%= f.password_field :key, class: 'form-control' %>
+      
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
