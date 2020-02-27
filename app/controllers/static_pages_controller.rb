@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     
     @timetables = Timetable.all
     
-    @times0900 = Timetable.where(hour: "9", minute: "00") 
+    @times0900 = Timetable.where(hour: "9", minute: "00", date: "@day1") 
     @times0930 = Timetable.where(hour: "9", minute: "30")
     @times1000 = Timetable.where(hour: "10", minute: "00")
     @times1030 = Timetable.where(hour: "10", minute: "30")
@@ -26,6 +26,15 @@ class StaticPagesController < ApplicationController
     @times1830 = Timetable.where(hour: "18", minute: "30")
     @times1900 = Timetable.where(hour: "19", minute: "00")
     @times1930 = Timetable.where(hour: "19", minute: "30")
+    
+    @day1 = Date.today
+    @day2 = @day1 + 1
+    @day3 = @day1 + 2
+    @day4 = @day1 + 3
+    @day5 = @day1 + 4
+    @day6 = @day1 + 5
+    @day7 = @day1 + 6
+    @time = Time.now
   end
   
   def new

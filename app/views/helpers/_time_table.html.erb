@@ -1,7 +1,14 @@
 <h1>こちらから予約をお取りください</h1>
 <% if logged_in? %>
   <%= form_for(@timetable) do |f| %>
-    <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
+    <%= f.label :日付を指定してください %>
+    <%= f.select :date, [["今日", @day1],
+                         [@day2, @day2],
+                         [@day3, @day3],
+                         [@day4, @day4],
+                         [@day5, @day5],
+                         [@day6, @day6],
+                         [@day7, @day7],] %>
     <%= f.label :時間を選択してください %>
     <%= f.select :hour, [["9時", "9"], 
                          ["10時", "10"],

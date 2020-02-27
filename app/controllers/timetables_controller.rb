@@ -24,6 +24,8 @@ class TimetablesController < ApplicationController
     @times1830 = Timetable.where(hour: "18", minute: "30")
     @times1900 = Timetable.where(hour: "19", minute: "00")
     @times1930 = Timetable.where(hour: "19", minute: "30")
+    
+    
   end
   
   def new
@@ -44,6 +46,8 @@ class TimetablesController < ApplicationController
       flash[:success] = "申し訳ございません。すでに予約が上限に達しているため、受け付けられませんでした。"
       redirect_to root_path
     end
+    
+    
   end
   
   def show
