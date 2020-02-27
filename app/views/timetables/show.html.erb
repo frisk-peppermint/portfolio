@@ -1,7 +1,9 @@
+<div class="center jumbotron">
 <% if @timetable.nil? %>
 <h1>予約が存在しません</h1>
   <% else %>
-  <h1><%= @timetable.user_name %>さんの次の予約は<h1>
+  <h3><%= @timetable.user_name %>様の次のご予約は</h3>
   <h3><%= @timetable.date %>日の<%= @timetable.hour %>時<%= @timetable.minute %>時からです</h3>
   <%= link_to "予約を取り消す", @timetable, method: :delete, data: { confirm: "予約を消去します。よろしいですか？"} %>
 <% end %>
+</div>

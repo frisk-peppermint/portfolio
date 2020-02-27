@@ -22,7 +22,7 @@
           </li>
         <% elsif logged_in? %>
           <li><%= link_to "このサイトについての説明", description_path, id: "header_letter" %></li>
-          <li><%= link_to "今日の予約状況", root_path, id: "header_letter" %></li>
+          <li><%= link_to "予約状況 & 予約をとる", root_path, id: "header_letter" %></li>
           <li><%= link_to "スタッフ一覧", staffs_path, id: "header_letter" %></li>
           <li><%= link_to "#{current_user.name}さんのご予約", timetable_path(current_user), id: "header_letter" %></li>
           <li class="dropdown">

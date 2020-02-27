@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @timetable = Timetable.where(user_id: params[:id]).first
   end
   
   def create

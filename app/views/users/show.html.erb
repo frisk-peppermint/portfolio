@@ -1,6 +1,11 @@
 <h1>ユーザー情報</h1>
 
 <div class="center jumbotron">
-  <h5>お名前</h5>
-  <h3><%= @user.name %></h3> 
+  <h5>お名前とご予約</h5>
+  <h3><%= @user.name %> 様</h3> 
+  <% if !@timetable.nil? %>
+    <%= @timetable.date %>日<%= @timetable.hour %>時<%= @timetable.minute %>分
+  <% else %>
+    予約がありません
+  <% end %>
 </div>
