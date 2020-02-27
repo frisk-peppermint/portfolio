@@ -22,7 +22,7 @@
     <%= f.label :分を選択してください %>                     
     <%= f.select :minute, [["00分", "00"], 
                            ["30分", "30"]], {id: "minute"} %>
-    <%= f.submit :予約する  %>
+    <%= f.submit :予約する, data: { confirm: "ご予約をとります。よろしいですか？"}  %>
   <% end %> 
 <% end %>
 

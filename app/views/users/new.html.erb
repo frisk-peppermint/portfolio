@@ -14,7 +14,7 @@
       <%= f.label :password_confirmation, "パスワード（確認）" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "登録する", class: "btn btn-primary" %>
+      <%= f.submit "登録する", class: "btn btn-primary", data: { confirm: "ユーザー登録を行います。よろしいですか？"} %>
     <% end %>
   </div>
 </div>
