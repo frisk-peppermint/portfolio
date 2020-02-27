@@ -19,13 +19,12 @@ class StaffsController < ApplicationController
   def create
     @staff = Staff.new(staff_params)  
     
-    if @staff[:key] == "nikoniko"
-       @staff.save
-       log_in_as_staff @staff
-       flash[:success] = "スタッフ登録に成功しました。"
-       redirect_to @staff
+    if @staff.save && @staff[:key] == "nikoniko"
+      log_in_as_staff @staff
+      flash[:success] = "スタッフ登録に成功しました。"
+      redirect_to @staff
     else
-       render 'new'
+      render 'new'
     end
   end
   
