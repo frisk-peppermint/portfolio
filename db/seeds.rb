@@ -8,46 +8,46 @@
 
 
 
-Staff.create!(name: "徳永奨",
+Staff.create!(name: "徳永",
              email: "tokunaga@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: true)
              
-Staff.create!(name: "杉盛功",
+Staff.create!(name: "杉盛",
              email: "sugimori@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: false)
                           
-Staff.create!(name: "湯浅夏樹",
+Staff.create!(name: "湯浅",
              email: "yuasa@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: false)
 
-Staff.create!(name: "高橋優希",
+Staff.create!(name: "高橋",
              email: "takahashi@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: false)
              
-Staff.create!(name: "小林絵里佳",
+Staff.create!(name: "小林",
              email: "kobayashi@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: false)
              
-Staff.create!(name: "加藤桃華",
+Staff.create!(name: "加藤",
              email: "katou@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: false)
                                                     
-Staff.create!(name: "矢吹百香",
+Staff.create!(name: "矢吹",
              email: "yabuki@gmail.com",
-             password:              "password",
-             password_confirmation: "password",
+             password:              "kusahaeru",
+             password_confirmation: "kusahaeru",
              admin: false)
              
 #99.times do |n|

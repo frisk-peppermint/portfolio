@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'static_pages#home' # => root_path
   get    '/contact',      to: 'static_pages#contact'
   get    '/campaign',     to: 'static_pages#campaign'
+  get    '/description',  to: 'static_pages#description'
   get    '/signup',       to: 'users#new'
   get    '/usertimetable',    to: 'users#timetable'
   post   '/signup',       to: 'users#create'

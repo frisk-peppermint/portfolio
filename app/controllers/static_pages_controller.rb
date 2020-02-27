@@ -37,7 +37,7 @@ class StaticPagesController < ApplicationController
     @time = Time.now
   end
   
-  def new
+  def description
   end
   
 end

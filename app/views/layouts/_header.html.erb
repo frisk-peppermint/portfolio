@@ -6,6 +6,7 @@
         
         
         <% if logged_in_as_staff? %>
+          <li><%= link_to "このサイトについての説明", description_path, id: "header_letter" %></li>
           <li><%= link_to "スタッフ専用予約表", stafftimetable_path, id: "header_letter" %></li>
           <li><%= link_to "患者様一覧", users_path, id: "header_letter" %></li>
           <li><%= link_to "ブログを書く", root_path, id: "header_letter" %></li>
@@ -20,6 +21,7 @@
             </ul>
           </li>
         <% elsif logged_in? %>
+          <li><%= link_to "このサイトについての説明", description_path, id: "header_letter" %></li>
           <li><%= link_to "今日の予約状況", root_path, id: "header_letter" %></li>
           <li><%= link_to "ログイン", login_path, id: "header_letter" %></li>
           <li><%= link_to "スタッフ一覧", staffs_path, id: "header_letter" %></li>
@@ -34,6 +36,7 @@
             </ul>
           </li>
         <% else %>
+        <li><%= link_to "このサイトについての説明", description_path, id: "header_letter" %></li>
         <li><%= link_to "今日の予約状況", root_path, id: "header_letter" %></li>
         <li><%= link_to "ログイン", login_path, id: "header_letter" %></li>
         <li><%= link_to "スタッフ一覧", staffs_path, id: "header_letter" %></li>
