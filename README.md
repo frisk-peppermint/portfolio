@@ -1,24 +1,39 @@
-# README
+# Readme
+ヘロクにデプロイしてあるのでこちらからどういうサイトか確認できます！ 〜2020/02/28日現在〜
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://narita.herokuapp.com/description
 
-Things you may want to cover:
+整骨院の現在の予約状況がわかるサイト
 
-* Ruby version
 
-* System dependencies
+# 概要
 
-* Configuration
+このサイトでユーザーアカウントを作成し、予約をとると予約表に記録が反映されます。スタッフとしてログインすれば患者様の名前が表示されますが、ユーザーとしてログインした場合は匿名として「予約済み」と予約表に表示されます。
 
-* Database creation
+# その他の機能
+・ユーザー検索機能 （ユーザーが増えてきたときにユーザー名で簡単に検索できます）
 
-* Database initialization
+・先生のブログ機能 （写真なども投稿できます！）
 
-* How to run the test suite
+・スタッフ専用予約表 （ユーザーの名前が予約表に表示されます）
 
-* Services (job queues, cache servers, search engines, etc.)
+# バージョン （Rails Tutorialと同じです）
+Rails 5.1.6
 
-* Deployment instructions
+ruby 2.6.3
 
-* ...
+# インストール
+$ git clone https://github.com/frisk-peppermint/portfolio.git
+
+$ cd portfolio ※portfolioがあるディレクトリまで移動してください。
+
+$ bundle install
+
+$ bin/rails db:migrate
+
+$ bin/rails db:seed
+
+$ bin/rails s
+
+# コメント
+ご覧いただきありがとうございます。これは初心者の私が独学で勉強して初めて作ったサイトです。至らないところやダメダメなところが多いと思います。コードのリファクタリングもできていないところもありますし、テストコードも全然しょぼいです。勉強しながら、少しづつ直していきます。もし、「ここ、こうした方がいいんじゃない？」や「バグあるじゃん！」と思ったら是非私のツイッターにメッセージを送ってください！私の力量の範囲内でどうにかできるなら頑張ります！ https://twitter.com/muraishiatsushi
