@@ -35,6 +35,7 @@ class TimetablesController < ApplicationController
     @times1930 = Timetable.where(hour: "19", minute: "30", date: @day1)
   end
   
+  
   def new
     @timetable = Timetable.new 
   end 
@@ -48,13 +49,13 @@ class TimetablesController < ApplicationController
     if (@reservations.count < 4) && @user_id_in_timetable.empty?
       @timetable.save
       flash[:success] = "ご予約ありがとうございます。#{@timetable.date}日#{@timetable.hour}時#{@timetable.minute}分にお待ちしております"
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     elsif @user_id_in_timetable.exists?
       flash[:danger] = "申し訳ございません。ご予約は一人につき一つまでとなっております。"
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       flash[:danger] = "申し訳ございません。#{@timetable.date}日#{@timetable.hour}時#{@timetable.minute}分の予約は枠が上限に達しているため、受け付けられませんでした。"
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     end
     
     
