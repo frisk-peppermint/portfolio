@@ -24,7 +24,7 @@
           <li><%= link_to "このサイトについての説明", description_path, id: "header_letter" %></li>
           <li><%= link_to "予約状況 & 予約をとる", root_path, id: "header_letter" %></li>
           <li><%= link_to "スタッフ一覧", staffs_path, id: "header_letter" %></li>
-          <li><%= link_to "#{current_user.name}さんのご予約", timetable_path(current_user), id: "header_letter" %></li>
+          <li><%= link_to "#{current_user.name} 様のご予約", timetable_path(current_user), id: "header_letter" %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="header_letter">アカウント<b class="caret"></b></a>
             <ul class="dropdown-menu">

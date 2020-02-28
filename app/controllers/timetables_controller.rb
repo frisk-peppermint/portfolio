@@ -251,10 +251,10 @@ class TimetablesController < ApplicationController
     
     if (@reservations.count < 4) && @user_id_in_timetable.empty?
       @timetable.save
-      flash[:success] = "ご予約ありがとうございます。#{@timetable.date}日#{@timetable.hour}時#{@timetable.minute}分にお待ちしております"
+      flash[:success] = "ご予約ありがとうございます。#{@timetable.date}日#{@timetable.hour}時#{@timetable.minute}分にお待ちしております。ご予約を取り消す場合は上に表示されている「#{@timetable.user_name} 様のご予約」からお願いします。"
       redirect_back(fallback_location: root_path)
     elsif @user_id_in_timetable.exists?
-      flash[:danger] = "申し訳ございません。ご予約は一人につき一つまでとなっております。"
+      flash[:danger] = "申し訳ございません。ご予約は一人につき一つまでとなっております。上に表示されている「#{@timetable.user_name} 様のご予約」で確認することができます。"
       redirect_back(fallback_location: root_path)
     else
       flash[:danger] = "申し訳ございません。#{@timetable.date}日#{@timetable.hour}時#{@timetable.minute}分の予約は枠が上限に達しているため、受け付けられませんでした。"
