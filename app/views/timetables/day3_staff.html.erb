@@ -1,16 +1,16 @@
 <div class="home_table">
   
 <table class="table table-bordered table-dark">
-    <%= link_to "#{@day1}日の予約表を見る", stafftimetable_path %> ←閲覧中<br><br>
+    <%= link_to "#{@day1}日の予約表を見る", stafftimetable_path %><br><br>
     <%= link_to "#{@day2}日の予約表を見る", day2_staff_path %><br><br>
-    <%= link_to "#{@day3}日の予約表を見る", day3_staff_path %><br><br>
+    <%= link_to "#{@day3}日の予約表を見る", day3_staff_path %> ←閲覧中<br><br>
     <%= link_to "#{@day4}日の予約表を見る", day4_staff_path %><br><br>
     <%= link_to "#{@day5}日の予約表を見る", day5_staff_path %><br><br>
     <%= link_to "#{@day6}日の予約表を見る", day6_staff_path %><br><br>
     <%= link_to "#{@day7}日の予約表を見る", day7_staff_path %><br><br>
   <thead>
     <tr>
-      <td colspan="5"><h4>本日の予約状況</h4></td>
+      <td colspan="5"><h4><%= @day3 %>の予約状況</h4></td>
     </tr>
   </thead>
   <tbody>

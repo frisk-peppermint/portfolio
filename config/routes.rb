@@ -28,6 +28,12 @@ Rails.application.routes.draw do
   delete '/stafflogout',  to: 'sessions_for_staff#destroy'
   
   get    '/stafftimetable', to: 'timetables#timetable_index'
+  get    '/day2_staff',     to: 'timetables#day2_staff'
+  get    '/day3_staff',     to: 'timetables#day3_staff'
+  get    '/day4_staff',     to: 'timetables#day4_staff'
+  get    '/day5_staff',     to: 'timetables#day5_staff'
+  get    '/day6_staff',     to: 'timetables#day6_staff'
+  get    '/day7_staff',     to: 'timetables#day7_staff'
   
   resources :users
   resources :staffs

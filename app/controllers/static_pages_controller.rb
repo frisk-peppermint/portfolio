@@ -244,4 +244,5 @@ class StaticPagesController < ApplicationController
   def description
   end
   
+  
 end
