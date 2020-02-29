@@ -7,7 +7,7 @@ RSpec.feature "Reservation", type: :feature do
     visit login_path
     fill_in "name", with: "atsushi"
     fill_in "password", with: "password"
-    click_on "Log in"
+    find('#rspec').click
     click_on "アカウント"
     click_on "ログアウト"
     
@@ -20,11 +20,9 @@ RSpec.feature "Reservation", type: :feature do
     visit login_path
     fill_in "name", with: "atsushi"
     fill_in "password", with: "password"
-    click_on "Log in"
-    click_on "予約状況"
-    select '9時', from: 'hour'
-    select '30分', from: 'minute'
-    click_on "Create Timetable"
+    find('#rspec').click
+    click_on "予約状況 & 予約をとる"
+    click_on "予約する"
     expect(page).to have_content 'ご予約ありがとうございます'
   end
   
@@ -34,12 +32,10 @@ RSpec.feature "Reservation", type: :feature do
     visit login_path
     fill_in "name", with: "atsushi"
     fill_in "password", with: "password"
-    click_on "Log in"
-    click_on "予約状況"
-    select '9時', from: 'hour'
-    select '30分', from: 'minute'
-    click_on "Create Timetable"
-    click_on "atsushiさんのご予約"
+    find('#rspec').click
+    click_on "予約状況 & 予約をとる"
+    click_on "予約する"
+    click_on "atsushi 様のご予約"
     click_on "予約を取り消す"
     expect(page).to have_content '予約が取り消されました。'
   end
@@ -50,7 +46,7 @@ RSpec.feature "Reservation", type: :feature do
     visit login_path
     fill_in "name", with: "atsushi"
     fill_in "password", with: "password"
-    click_on "Log in"
+    find('#rspec').click
     click_on "アカウント"
     click_on "アカウント編集"
     fill_in 'new_name', with: 'hoge'

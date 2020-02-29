@@ -7,19 +7,6 @@ RSpec.describe 'Users signup', type: :request do
     !session[:user_id].nil?
   end
   
-  context 'ユーザー登録後自動的にログインされるか' do
-    get signup_path
-    expect {
-      post users_path, params: { user: { name:                  'atsushi',
-                                         password:              'password',
-                                         password_confirmation: 'password' } }
-    }.to change(User, :count).by(1)
-    
-    redirect_to @user
-    follow_redirect!
-    assert_template 'users/show'
-    assert is_logged_in?
-  end
   
   context "as other user" do 
     it "does not update the user" do

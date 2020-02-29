@@ -23,7 +23,7 @@
         <%= f.label :分を選択してください %>                     
         <%= f.select :minute, [["00分", "00"], 
                                ["30分", "30"]], {id: "minute"} %>
-        <%= f.submit :予約する, class: "btn btn-primary", data: { confirm: "ご予約をとります。よろしいですか？"}  %>
+        <%= f.submit :予約する, class: "btn btn-primary", id: "hoge", data: { confirm: "ご予約をとります。よろしいですか？"}  %>
       <% end %> 
     </div>
     <div class="datetime">

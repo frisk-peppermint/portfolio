@@ -7,7 +7,7 @@ RSpec.feature "スタッフ", type: :feature do
     visit stafflogin_path
     fill_in "staff_email", with: "tokunaga@gmail.com"
     fill_in "staff_password", with: "password"
-    click_on "Log in"
+    find('#rspec').click
     click_on "アカウント"
     click_on "ログアウト"
     
@@ -20,7 +20,7 @@ RSpec.feature "スタッフ", type: :feature do
     visit stafflogin_path
     fill_in "staff_email", with: "tokunaga@gmail.com"
     fill_in "staff_password", with: "password"
-    click_on "Log in"
+    find('#rspec').click
     click_on "アカウント"
     click_on "スタッフ情報変更"
     fill_in 'staff_name', with: 'hoge'
@@ -37,9 +37,9 @@ RSpec.feature "スタッフ", type: :feature do
     visit stafflogin_path
     fill_in "staff_email", with: "tokunaga@gmail.com"
     fill_in "staff_password", with: "password"
-    click_on "Log in"
+    r
     click_on "スタッフ一覧"
-    click_on "delete"
+    click_on "削除"
     expect(page).to have_content "スタッフを削除しました"
   end
   
@@ -47,7 +47,7 @@ RSpec.feature "スタッフ", type: :feature do
     user = create(:user)
     visit users_path
     fill_in 'search', with: 'atsushi'
-    click_on 'Search'
+    click_on '検索'
     expect(page).to have_content 'atsushi'
   end
 end

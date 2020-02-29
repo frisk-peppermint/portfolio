@@ -4,7 +4,7 @@ require 'rails_helper'
     it "is valid with a first name, last name, email, and password" do
       user = build(:user, name: " " )
       user.valid?
-      expect(user.errors[:name]).to include("can't be blank")
+      expect(user.errors[:name]).to include("を入力してください")
    end
  
     it "ユーザーは名前、もしくわパスワードが重複していても作成可能" do
