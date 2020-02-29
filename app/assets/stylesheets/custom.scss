@@ -15,7 +15,39 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-image: image-url("hoge.png");
+    
 }
+
+
+
+
+
+[class$="-contents"] {
+  color:white;
+  height:200px;
+  font-size:2rem;
+  text-align:center;
+  line-height:200px;
+}
+
+.left-contents {
+  overflow: hidden;
+  width: 100vw;
+}
+.right-contents {
+  overflow: hidden;
+  width: 100%;
+  
+}
+
+.datetime {
+  margin-bottom: 0px;
+  float: right;
+  margin-right: 300px;
+}
+
+
 
 section {
   overflow: auto;
@@ -288,4 +320,3 @@ span.picture {
 strong {
   color: blue;
 }
-

@@ -26,14 +26,15 @@
         <%= f.submit :予約する, class: "btn btn-primary", data: { confirm: "ご予約をとります。よろしいですか？"}  %>
       <% end %> 
     </div>
-    <%= link_to "#{@day1}日の予約表を見る", root_path %><br><br>
-    <%= link_to "#{@day2}日の予約表を見る", day2_path %><br><br>
-    <%= link_to "#{@day3}日の予約表を見る", day3_path %><br><br>
-    <%= link_to "#{@day4}日の予約表を見る", day4_path %><br><br>
-    <%= link_to "#{@day5}日の予約表を見る", day5_path %> ←閲覧中<br><br>
-    <%= link_to "#{@day6}日の予約表を見る", day6_path %><br><br>
-    <%= link_to "#{@day7}日の予約表を見る", day7_path %><br><br>
-    
+    <div class="datetime">
+      <%= link_to "#{@day1}日の予約表を見る", root_path %><br><br>
+      <%= link_to "#{@day2}日の予約表を見る", day2_path %><br><br>
+      <%= link_to "#{@day3}日の予約表を見る", day3_path %><br><br>
+      <%= link_to "#{@day4}日の予約表を見る", day4_path %><br><br>
+      <%= link_to "#{@day5}日の予約表を見る", day5_path %> ←閲覧中<br><br>
+      <%= link_to "#{@day6}日の予約表を見る", day6_path %><br><br>
+      <%= link_to "#{@day7}日の予約表を見る", day7_path %><br><br>
+    </div>
 <% end %>
 
 
