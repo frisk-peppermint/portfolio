@@ -318,3 +318,18 @@ span.picture {
 strong {
   color: blue;
 }
+
+.timetableImage {
+
+  background-color:rgba(255,255,255,0.9);
+  background-blend-mode:lighten;
+}
+
+.jumbotron {
+  background-size: 30px 30px;
+  margin: 0 auto;
+  background-image: radial-gradient(#C6E6FB 15%, transparent 20%),
+                    radial-gradient(#ffd000 15%, transparent 20%);
+                    background-position: 0 0, 15px 15px;
+  background-color: #EEEEEE;
+}

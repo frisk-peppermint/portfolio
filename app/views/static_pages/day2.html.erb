@@ -46,7 +46,7 @@
   
   <thead>
     <tr>
-      <td colspan="5"><h4><%= @day2 %>日の予約状況</h4></td>
+      <td colspan="5" background="<%= asset_path "hoge.jpg" %>" class="timetableImage"><h3><%= @day2 %>日の予約状況</h3></td>
     </tr>
   </thead>
   <tbody>
@@ -86,7 +86,7 @@
         <% (4-@times1200.count).times do %><td>受付中</td><% end %>
     </tr>
     <tr>
-      <td colspan="5">休診</td>
+      <td colspan="5" background="<%= asset_path "hoge.jpg" %>" class="timetableImage">休診</td>
     </tr>
     <tr>
       <td>15:00~15:30</td>
