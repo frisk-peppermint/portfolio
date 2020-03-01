@@ -37,7 +37,7 @@ RSpec.feature "スタッフ", type: :feature do
     visit stafflogin_path
     fill_in "staff_email", with: "tokunaga@gmail.com"
     fill_in "staff_password", with: "password"
-    r
+    find('#rspec').click
     click_on "スタッフ一覧"
     click_on "削除"
     expect(page).to have_content "スタッフを削除しました"

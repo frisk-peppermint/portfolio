@@ -17,7 +17,7 @@ RSpec.describe 'Staffs signup', type: :request do
     redirect_to @staff
     follow_redirect!
     assert_template 'staffs/show'
-    assert is_logged_in_as_staff?
+    assert is_logged_in_as_staff?  #まだ完成していません。ここだけエラーがでます。
   end
     
   

@@ -11,9 +11,11 @@
       <%= image_tag @staff.image.thumb350.url, class: 'image' %>
       <% end %>
       <%= f.label :画像 %>
-      <button type="button" class="btn btn-outline-secondary rounded-pill">
+      <div>
+        <button type="button" class="btn btn-outline-secondary rounded-pill">
          <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-      </button>
+        </button>
+      </div>
       <%= f.label :名前 %>
       <%= f.text_field :name, class: 'form-control', id: 'staff_name' %>
 
