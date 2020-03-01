@@ -1,6 +1,6 @@
 <div class="center jumbotron">
 <% if @timetable.nil? %>
-<h3>予約が存在しません</h3>
+<h3>予約は存在しません</h3>
   <% else %>
   <h3><%= @timetable.user_name %>様の次のご予約は</h3>
   <h3><%= @timetable.date %>日の<%= @timetable.hour %>時<%= @timetable.minute %>時からです</h3>
@@ -8,6 +8,9 @@
 <% end %>
 </div>
 
+
+<br>
+<br>
 <div class="jumbotron">
   <h3>製作者からのコメント</h3><br>
   <h5>
